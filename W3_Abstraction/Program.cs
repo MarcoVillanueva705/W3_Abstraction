@@ -13,6 +13,7 @@ namespace W3_Abstraction
         //The body is provided by the derived class (inherited from)
 
         //An abstract class can have both abstract and regular methods:
+
         // Abstract class
 
         abstract class Animal
@@ -25,11 +26,30 @@ namespace W3_Abstraction
                 Console.WriteLine("Zzz");
             }
         }
+
+        //derived class (from Animal)
+        class Pig : Animal
+        {
+            public override void animalSound()
+            {
+              // The body of animalSound() is provided here
+                Console.WriteLine("The pig goes pweeh!");
+            }
+        }
+
         static void Main(string[] args)
         {
-
+            Pig myPig = new Pig();//create a Pig object
+    
+            myPig.sleep();//call the regular method
+            myPig.animalSound();//call the abstract method
 
         }
+        //Why And When To Use Abstract Classes and Methods?
+        //To achieve security - hide certain details and only 
+        //show the important details of an object.
+
+
     }
 }      
 
